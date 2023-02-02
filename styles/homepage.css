@@ -11,6 +11,7 @@
     align-content: center;
     align-items: center;
     gap: 70px;
+    padding-bottom: 75px;
 }
 
 .product-image {
