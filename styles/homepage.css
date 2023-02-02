@@ -90,6 +90,7 @@ a.link {
 
 a.link:hover {
     filter: brightness(1.4);
+    color: var(--color-white);
 }
 
 .background {
