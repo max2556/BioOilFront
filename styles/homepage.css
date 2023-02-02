@@ -13,24 +13,27 @@
 }
 
 .product-image {
-    width: 100%;
+    width: 80%;
     height: 550px;
-    background: url("../assets/BioOil_alternative.png");
 
-    margin-right: 50px;
-
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-x: right;
+    /* margin-right: 50px; */
 }
 
+.product-image img {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
 .description-holder {
-    width: 80%;
+    width: 100%;
 }
 
 .description-holder .description {
     --font-size: 32px;
 
+    width: 80%;
     color: var(--color-white);
     font-size: var(--font-size);
 
@@ -52,6 +55,15 @@
     letter-spacing: 0.04em;
     white-space: nowrap;
 }
+
+.product-logo h2 {
+    color: var(--color-green);
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 45px;
+    white-space: nowrap;
+}
+
 
 
 a.link {
@@ -76,8 +88,7 @@ a.link {
     transition: 0.3s ease-in-out;
 }
 
-a.link:hover
-{
+a.link:hover {
     filter: brightness(1.4);
 }
 
@@ -102,8 +113,12 @@ a.link:hover
 /*------------------ Адаптация --------------------*/
 
 @media (min-width: 2100px) {
-    .flex{
-        width: 50%;
+    .flex {
+        width: 1600px;
+    }
+    .product-image img{
+        margin-left: auto;
+        margin-right: 10px;
     }
 }
 
@@ -112,45 +127,54 @@ a.link:hover
         --font-size: 28px;
     }
 }
+
 @media (max-width: 1200px) {
-    .description-holder
-    {
+    .description-holder {
         width: 90%;
     }
-    .product-logo h1{
+    .description-holder .description{
+        width: 100%;
+    }
+
+    .product-logo h1 {
         font-size: 56px;
     }
-    .product-image {
-        height: 400px;
+
+    .product-image img{
+        height: auto;
+        width: 100%;
     }
 }
 
 @media (max-width: 700px) {
-    .flex{
+    .flex {
         width: 95%;
         margin-right: 25px;
     }
+
     .product-image {
         display: none;
-    }    
-    .description-holder
-    {
+    }
+
+    .description-holder {
         width: 70%;
     }
-    .product-logo h1{
+
+    .product-logo h1 {
         font-size: 46px;
     }
+
     .description-holder .description {
         --font-size: 24px;
     }
-    a.link{
+
+    a.link {
         width: 100%;
     }
 }
 
 @media (max-width: 500px) {
-    .description-holder
-    {
+    .description-holder {
         width: 90%;
     }
 }
