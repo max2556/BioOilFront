@@ -138,6 +138,9 @@ a.link:hover {
     html {
         font-size: 10px;
     }
+    .homepage {
+        padding-bottom: 13rem;
+    }
     .imposed-background-img {
         display: none;
     }
