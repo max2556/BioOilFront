@@ -2,14 +2,39 @@
     width: 100vw;
     height: 100vh;
 }
+.background {
+    --blur-size: 5px;
+    position: absolute;
+    left: calc(-2 * var(--blur-size));
+    top: calc(-2 * var(--blur-size));
 
-.flex {
-    display: flex;
-    width: 80%;
+    width: calc(100% + 4 * var(--blur-size));
+    height: calc(100% + 4 * var(--blur-size));
+    z-index: -1;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/Forest.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: blur(var(--blur-size));
+}
+
+.content {
     height: 100%;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*width: fit-content;*/
+    text-align: center;
+    /*position: relative;*/
+}
+.description-holder {
+    /*width: 100%;*/
+    width: 50%;
     margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .product-image {
@@ -26,14 +51,9 @@
 }
 
 
-.description-holder {
-    width: 100%;
-}
-
 .description-holder .description {
     --font-size: 32px;
 
-    width: 80%;
     color: var(--color-white);
     font-size: var(--font-size);
 
@@ -48,11 +68,12 @@
 
 .product-logo h1 {
     color: var(--color-white);
+    /*font-family: 'Rubik', sans-serif;*/
     font-weight: 700;
     text-transform: uppercase;
     font-size: 64px;
     line-height: 83px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     white-space: nowrap;
 }
 
@@ -93,33 +114,14 @@ a.link:hover {
     color: var(--color-white);
 }
 
-.background {
-    --blur-size: 7px;
-    position: absolute;
-    left: calc(-2 * var(--blur-size));
-    top: calc(-2 * var(--blur-size));
 
-    width: calc(100% + 4 * var(--blur-size));
-    height: calc(100% + 4 * var(--blur-size));
-    z-index: -1;
-
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/Forest.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    filter: blur(var(--blur-size));
-}
 
 
 /*------------------ Адаптация --------------------*/
 
 @media (min-width: 2100px) {
-    .flex {
-        width: 1600px;
-    }
-    .product-image img{
-        margin-left: auto;
-        margin-right: 10px;
+    .description-holder {
+        width: 1000px;
     }
 }
 
@@ -148,9 +150,8 @@ a.link:hover {
 }
 
 @media (max-width: 700px) {
-    .flex {
+    .content {
         width: 95%;
-        margin-right: 25px;
     }
 
     .product-image {
@@ -161,8 +162,11 @@ a.link:hover {
         width: 70%;
     }
 
+    .product-logo h2 {
+        font-size: 25px;
+    }
     .product-logo h1 {
-        font-size: 46px;
+        font-size: 42px;
     }
 
     .description-holder .description {
