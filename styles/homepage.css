@@ -20,6 +20,7 @@
 }
 img.background-img {
     height: 100%;
+    width: 100%;
     filter: blur(0.5px) saturate(90%);
 }
 .imposed-background-img {
@@ -138,6 +139,9 @@ a.link:hover {
 @media (max-width: 500px) {
     :root {
         font-size: 10px;
+    }
+    img.background-img {
+        width: unset;
     }
     .homepage {
         padding-bottom: 20rem;
