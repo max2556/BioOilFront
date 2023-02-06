@@ -29,6 +29,7 @@ body {
     overflow: hidden;
 
     color: var(--color-white);
+    background: var(--color-black);
     font-family: var(--text-font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

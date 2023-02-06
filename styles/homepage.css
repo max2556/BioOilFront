@@ -12,19 +12,20 @@
     bottom: 0;
     --offset: 50%;
 }
-.background-img {
+.background-img-wrapper {
     position: absolute;
-    left: var(--offset);
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../assets/IMG_4223 3.jpg") no-repeat;
-    background-size: cover;
+}
+img.background-img {
+    height: 100%;
     filter: blur(0.5px) saturate(90%);
 }
 .imposed-background-img {
+    position: absolute;
     height: 70%;
-    left: calc(var(--offset) - 4rem);
+    left: -4rem;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
@@ -40,11 +41,10 @@
 }
 
 .logo-icon {
-    margin-left: -40px;
-    /*margin-bottom: 10rem;*/
+    margin-left: -1.7rem;
     position: absolute;
     top: 0;
-    height: 7rem;
+    height: 4.5rem;
 }
 
 .product-logo {
@@ -86,7 +86,7 @@ a.link {
     color: var(--color-black);
     text-decoration: none;
     font-size: 1.9rem;
-    padding: 0 5rem;
+    padding: 0 4rem;
 
     text-align: center;
     line-height: var(--height);
@@ -104,38 +104,39 @@ a.link:hover {
 
 
 
-
-/*------------------ Адаптация --------------------*/
-
-@media (min-width: 1700px) {
-    /*.background-img {*/
-    /*    left: 70%;*/
-    /*}*/
-    /*.imposed-background-img {*/
-    /*    left: 70%;*/
-    /*}*/
+@media (min-width: 1500px) {
     .homepage {
         padding-left: 12rem;
     }
     .background {
         --offset: 70%;
     }
-    .imposed-background-img {
-        left: calc(var(--offset) - 20rem);
+}
+
+@media (max-width: 927px) {
+    .background-img-wrapper {
+        left: 50%;
+    }
+    .homepage {
+        padding-top: 10rem;
+        padding-bottom: 11rem;
+    }
+    :root {
+        font-size: 12px;
     }
 }
 
-@media (max-width: 950px) {
-    .background {
-        --offset: 30%;
+@media (max-width: 660px) {
+    .background-img-wrapper {
+        left: 30%;
     }
     .imposed-background-img {
-        left: calc(var(--offset) + 10rem);
+        left: 10rem;
     }
 }
 
 @media (max-width: 500px) {
-    html {
+    :root {
         font-size: 10px;
     }
     .homepage {
@@ -144,32 +145,18 @@ a.link:hover {
     .imposed-background-img {
         display: none;
     }
-    .background-img {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/IMG_4223 3.jpg") no-repeat;
+    .background-img-wrapper .background-img {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url("../assets/IMG_4223 3.jpg") no-repeat;
         background-size: cover;
+        filter: opacity(0.7);
     }
-    /*.background {*/
-    /*    --offset: 30%;*/
-    /*}*/
-    /*.imposed-background-img {*/
-    /*    left: calc(var(--offset) + 10rem);*/
-    /*}*/
 }
+@media (max-width: 370px) {
+    :root {
+        font-size: 9px;
+    }
+    .product-logo h1 {
+        font-size: 3rem;
+    }
 
-
-@media (min-width: 2100px) {
-
-}
-
-@media (max-width:1400px) {
-
-}
-
-@media (max-width: 1200px) {
-}
-
-@media (max-width: 700px) {
-}
-
-@media (max-width: 500px) {
 }
